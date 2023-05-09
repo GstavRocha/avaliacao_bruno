@@ -9,18 +9,9 @@ import { FilmeService } from '../filme.service';
   styleUrls: ['home.page.scss'],
 })
 export class HomePage {
-  titulo: string;
-  diretor: string;
-  cartaz: string;
-  origem: string;
-  data: number;
-
-  constructor(fs: FilmeService) {
-    this.titulo = '';
-    this.diretor= '';
-    this.cartaz = '';
-    this.origem = '';
-    this.data =0;
+  filme: Filme[];
+  constructor(private fs: FilmeService) {
+    this.filme = this.fs.exibir()
   }
 
 }
